@@ -4,6 +4,7 @@ import android.app.Application
 import android.graphics.Color
 import android.util.Log
 import androidx.core.provider.FontRequest
+import androidx.emoji.bundled.BundledEmojiCompatConfig
 import androidx.emoji.text.EmojiCompat
 import androidx.emoji.text.FontRequestEmojiCompatConfig
 
@@ -15,6 +16,11 @@ class App : Application() {
     }
 
     private fun setupEmoji() {
+        // Use the bundled font for EmojiCompat
+        // If you use bundled fonts, uncomment the following
+//        val config = BundledEmojiCompatConfig(applicationContext)
+
+        // Use a downloadable font for EmojiCompat
         val fontRequest = FontRequest(
             "com.google.android.gms.fonts",
             "com.google.android.gms",
